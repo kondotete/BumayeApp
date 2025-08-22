@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 默认边距和尺寸 - Marges et dimensions par défaut -->
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_extra_large">32dp</dimen>
+
+    <!-- Padding dimensions -->
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">16dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
+
+    <!-- Card dimensions -->
+    <dimen name="card_margin">8dp</dimen>
+    <dimen name="card_corner_radius">12dp</dimen>
+    <dimen name="card_elevation">4dp</dimen>
+
+    <!-- Button dimensions -->
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="button_corner_radius">12dp</dimen>
+
+    <!-- Text sizes -->
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_extra_small">12sp</dimen>
+
+    <!-- Input field dimensions -->
+    <dimen name="input_field_margin">8dp</dimen>
+    <dimen name="input_field_padding">12dp</dimen>
+
+    <!-- Toolbar dimensions -->
+    <dimen name="toolbar_height">56dp</dimen>
+
+    <!-- RecyclerView item dimensions -->
+    <dimen name="recyclerview_item_margin">8dp</dimen>
+    <dimen name="recyclerview_item_padding">16dp</dimen>
+</resources>

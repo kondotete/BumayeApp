@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Inclure la sauvegarde des données client -->
+    <include domain="sharedpref" path="BumayeAppPrefs.xml"/>
+    <include domain="file" path="ClientPhotos/"/>
+
+    <!-- Exclure les fichiers temporaires -->
+    <exclude domain="file" path="temp/"/>
+    <exclude domain="cache"/>
+</full-backup-content>
