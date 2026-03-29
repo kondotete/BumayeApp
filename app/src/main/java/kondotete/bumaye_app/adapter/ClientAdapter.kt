@@ -1,11 +1,13 @@
 package kondotete.bumaye_app.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import kondotete.bumaye_app.databinding.ItemClientBinding
+import kondotete.bumaye_app.R
 import kondotete.bumaye_app.model.Client
 
 class ClientAdapter(
@@ -13,12 +15,9 @@ class ClientAdapter(
 ) : ListAdapter<Client, ClientAdapter.ClientViewHolder>(ClientDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClientViewHolder {
-        val binding = ItemClientBinding.inflate(
-            LayoutInflater.from(parent.context),
-            parent,
-            false
-        )
-        return ClientViewHolder(binding)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_client, parent, false)
+        return ClientViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ClientViewHolder, position: Int) {
@@ -26,23 +25,26 @@ class ClientAdapter(
     }
 
     inner class ClientViewHolder(
-        private val _v_binding: ItemClientBinding
-    ) : RecyclerView.ViewHolder(_v_binding.root) {
+        itemView: View
+    ) : RecyclerView.ViewHolder(itemView) {
+        
+        private val _v_textViewNomPrenom: TextView = itemView.findViewById(R.id._v_textViewNomPrenom)
+        private val _v_textViewDateCommande: TextView = itemView.findViewById(R.id._v_textViewDateCommande)
+        private val _v_textViewDateLivraison: TextView = itemView.findViewById(R.id._v_textViewDateLivraison)
+        private val _v_textViewMontant: TextView = itemView.findViewById(R.id._v_textViewMontant)
 
         fun bind(client: Client) {
-            _v_binding.apply {
-                _v_textViewNomPrenom.text = client._v_nom_prenoms
-                _v_textViewDateCommande.text = "Commande: ${client._v_date_commande}"
-                _v_textViewDateLivraison.text = "Livraison: ${client._v_date_livraison}"
+            _v_textViewNomPrenom.text = client._v_nom_prenoms
+            _v_textViewDateCommande.text = "Commande: ${client._v_date_commande}"
+            _v_textViewDateLivraison.text = "Livraison: ${client._v_date_livraison}"
 
-                // 显示付款信息 - Affichage des informations de paiement
-                val avance = client._v_avance.toDoubleOrNull() ?: 0.0
-                val total = client._v_somme_totale.toDoubleOrNull() ?: 0.0
-                _v_textViewMontant.text = "${avance.toInt()} / ${total.toInt()} FCFA"
+            // Affichage des informations de paiement
+            val avance = client._v_avance.toDoubleOrNull() ?: 0.0
+            val total = client._v_somme_totale.toDoubleOrNull() ?: 0.0
+            _v_textViewMontant.text = "${avance.toInt()} / ${total.toInt()} FCFA"
 
-                root.setOnClickListener {
-                    _v_on_client_click(client)
-                }
+            itemView.setOnClickListener {
+                _v_on_client_click(client)
             }
         }
     }

@@ -17,9 +17,9 @@
             android:id="@+id/_v_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="@color/purple_700"
             app:popupTheme="@style/Theme.BumayeApp.PopupOverlay"
-            app:title="Bumaye App - 客户管理" />
+            app:title="Bumaye App" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
